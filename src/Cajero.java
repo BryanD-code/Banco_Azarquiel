@@ -28,7 +28,7 @@ public class Cajero extends Thread {
         }
 
         while (true) {
-            Cliente clienteAtenderdouble = null;
+            Cliente clienteAtenderdouble;
 
             //  Solo bloqueo para sacar al cliente
             synchronized (colaClientes) {

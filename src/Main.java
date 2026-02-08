@@ -7,10 +7,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         //Cuenta bancaria
-        CuentaBancaria banco = new CuentaBancaria(1500,0,false);
+        CuentaBancaria banco = new CuentaBancaria(1500,0);
         //Crear clientes
         List<Cliente> clientes = Collections.synchronizedList(new ArrayList<>());
-        // Creamos 10 clientes con cantidades aleatorias
+        // creo 10 clientes con cantidades aleatorias
         for (int i = 1; i <= 10; i++) {
             clientes.add(new Cliente(i, (Math.random() * 200) + 50, "Cliente-" + i));
         }
@@ -50,10 +50,10 @@ public class Main {
         }
 
         System.out.println("\n=== RESUMEN FINAL ===");
-        System.out.println("Saldo final real en cuenta: " + String.format("%.2f", banco.getSaldo()) + "€");
-        System.out.println("Total dinero retirado: " + String.format("%.2f", totalDinero) + "€");
+        System.out.println("Saldo final: " + String.format("%.2f", banco.getSaldo()) + "€");
         System.out.println("Operaciones OK: " + totalOk);
         System.out.println("Operaciones DENEGADAS: " + totalNo);
+        System.out.println("Total retirado: " + String.format("%.2f", totalDinero) + "€");
         System.out.println("Total clientes atendidos: " + (totalOk + totalNo));
     }
 }

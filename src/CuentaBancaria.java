@@ -3,10 +3,10 @@ public class CuentaBancaria {
  private double cantidad;
  private boolean retiroExitoso;
 
-    public CuentaBancaria(double saldo, double cantidad, boolean retiroExitoso) {
+    public CuentaBancaria(double saldo, double cantidad) {
         this.saldo = saldo;
         this.cantidad = cantidad;
-        this.retiroExitoso = retiroExitoso;
+
     }
 
     public boolean isRetiroExitoso() {
@@ -37,7 +37,7 @@ public class CuentaBancaria {
      if (this.saldo >= cantidad){
      this.saldo -= cantidad;
      retiroExitoso = true;
-         System.out.println("Saldo disponible en el banco!");
+
      }else {
          retiroExitoso = false;
          System.out.println("No hay saldo disponible en el banco");
