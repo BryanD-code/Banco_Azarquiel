@@ -1,10 +1,12 @@
 public class Cliente {
  private int id;
  private double cantidadRetirar;
+ private String nombre;
 
-    public Cliente(int id, double cantidadRetirar) {
+    public Cliente(int id, double cantidadRetirar, String nombre) {
         this.id = id;
         this.cantidadRetirar = cantidadRetirar;
+        this.nombre = nombre;
     }
 
     public int getId() {
@@ -21,6 +23,14 @@ public class Cliente {
 
     public void setCantidadRetirar(double cantidadRetirar) {
         this.cantidadRetirar = cantidadRetirar;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override

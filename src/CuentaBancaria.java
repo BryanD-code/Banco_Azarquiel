@@ -1,9 +1,9 @@
 public class CuentaBancaria {
  private double saldo;
- private int cantidad;
+ private double cantidad;
  private boolean retiroExitoso;
 
-    public CuentaBancaria(double saldo, int cantidad, boolean retiroExitoso) {
+    public CuentaBancaria(double saldo, double cantidad, boolean retiroExitoso) {
         this.saldo = saldo;
         this.cantidad = cantidad;
         this.retiroExitoso = retiroExitoso;
@@ -20,25 +20,27 @@ public class CuentaBancaria {
     public double getSaldo() {
         return saldo;
     }
-
-    public void setSaldo(double saldo) {
+    // para actulizar el saldo
+    public synchronized void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
-    public int getCantidad() {
+    public double getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
     }
     //Funcion con synchronized para retirar para que solo 1 hilo a la vez pueda acceder
-    public synchronized boolean retiroDinero(int cantidad){
+    public synchronized boolean retiroDinero(double cantidad){
      if (this.saldo >= cantidad){
      this.saldo -= cantidad;
      retiroExitoso = true;
+         System.out.println("Saldo disponible en el banco!");
      }else {
          retiroExitoso = false;
+         System.out.println("No hay saldo disponible en el banco");
      }
      return retiroExitoso;
     }
